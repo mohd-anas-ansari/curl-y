@@ -26,12 +26,23 @@ class List extends React.Component {
 		);
 	};
 
-	render() {
+	displayAddNewLinkButton = () => {
 		return (
-			<React.Fragment>
-				<h1>Links will be appearing soon!!</h1>
-				{this.displayLinkList(this.props.links)}
-			</React.Fragment>
+			<a className="btn btn-primary" href="/links/new">
+				Add New LInk
+			</a>
+		);
+	};
+
+	render() {
+		let links = this.props.links;
+		return (
+			<div className="container">
+				<div className="row">
+					<div className="col-md-10">{this.displayLinkList(links)}</div>
+					<div className="col-md-2">{this.displayAddNewLinkButton()}</div>
+				</div>
+			</div>
 		);
 	}
 }
