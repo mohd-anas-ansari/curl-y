@@ -13,6 +13,7 @@ class Show extends Component {
 					<div className="row">
 						<div className="col-md-10">
 							{link.id} {link.title}
+							<p>{link.source_url}</p>
 						</div>
 					</div>
 				</div>
