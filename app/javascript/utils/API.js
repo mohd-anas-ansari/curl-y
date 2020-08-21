@@ -7,12 +7,13 @@ const headers = {
 };
 
 export default {
-  postNewLink: (payload) => {
+	postNewLink: (payload) => {
 		return fetch(Routes.links_path(), {
 			method: "POST",
 			headers: headers,
 			body: JSON.stringify(payload),
 		}).then((response) => {
+			console.log(response, "RESPONSE");
 			if (!response.ok) {
 				throw response;
 			}

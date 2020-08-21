@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import API from "../../utils/API";
 import * as Routes from "../../utils/Routes";
 
-
 class List extends React.Component {
 	displayLinkList = (links) => {
 		return (
@@ -16,9 +15,9 @@ class List extends React.Component {
 							{links.map((link, index) => {
 								return (
 									<li key={index}>
-										Link id : {link.id}
-										<br />
-										Link title: {link.title}
+										<a href={Routes.link_path(link.id)}>
+											{link.id} {link.title}
+										</a>
 									</li>
 								);
 							})}

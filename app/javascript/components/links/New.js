@@ -37,13 +37,13 @@ class New extends Component {
 
 		API.postNewLink(payload)
 			.then((response) => {
-				console.log(response, "response from handleSubmit");
 				this.setState({ message: response.notice });
 				setTimeout(function () {
-					window.location.href = Routes.links_path();
+					window.location.href = Routes.link_path(response.id);
 				}, 1000);
 			})
 			.catch((error) => {
+				console.log(error, "ERROR");
 				error.json().then(({ errors }) => {
 					this.setState({ ...this.state, errors });
 				});
