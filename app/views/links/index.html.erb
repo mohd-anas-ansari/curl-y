@@ -1,1 +1,6 @@
-<H1>List of links will appear here</H1>
+<% @links.each do |link| %>
+  <p>
+    <%= link.id %>
+    <%= link.title %>
+  </p>
+<% end %>

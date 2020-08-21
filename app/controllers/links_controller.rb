@@ -1,6 +1,6 @@
 class LinksController < ApplicationController
 
   def index
-    render
+    @links = Link.all
   end
 end

@@ -1,3 +1,3 @@
-class Taskk < ApplicationRecord
+class Link < ApplicationRecord
 
 end
