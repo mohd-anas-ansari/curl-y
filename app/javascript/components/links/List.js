@@ -1,5 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
+import API from "../../utils/API";
+import * as Routes from "../../utils/Routes";
+
+
 class List extends React.Component {
 	displayLinkList = (links) => {
 		return (
@@ -19,7 +24,7 @@ class List extends React.Component {
 							})}
 						</ul>
 					) : (
-						<h3>No linkk has been created yet</h3>
+						<h3>No link has been created yet</h3>
 					)}
 				</div>
 			</div>
@@ -28,7 +33,7 @@ class List extends React.Component {
 
 	displayAddNewLinkButton = () => {
 		return (
-			<a className="btn btn-primary" href="/links/new">
+			<a className="btn btn-primary" href={Routes.new_link_path()}>
 				Add New LInk
 			</a>
 		);

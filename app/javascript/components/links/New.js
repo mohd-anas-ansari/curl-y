@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 
+import API from "../../utils/API";
+import * as Routes from "../../utils/Routes";
+
 class New extends Component {
 	state = {
 		title: "",
@@ -13,20 +16,14 @@ class New extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		console.log("HERE");
 		const payload = { link: { title: this.state.title } };
+		console.log(payload, "Payload from handleSubmit");
 
-		fetch("/links", {
-			method: "POST",
-			headers: {
-				Accept: "application/json",
-				"Content-Type": "application/json",
-				"X-CSRF-TOKEN": document.querySelector('[name="csrf-token"]').content,
-			},
-			body: JSON.stringify(payload),
-		})
-			.then(() => (window.location.href = "/links"))
-			.catch(function (err) {
+		API.postNewLink(payload)
+			.then(() => {
+				window.location.href = Routes.links_path();
+			})
+			.catch((error) => {
 				if (error.text) {
 					error.text().then((err) => {
 						console.error(err);
@@ -41,7 +38,7 @@ class New extends Component {
 				<div className="row">
 					<h3 className="pb-3">Add Link</h3>
 				</div>
-				<form onSubmit={() => this.handleSubmit(e)}>
+				<form onSubmit={(e) => this.handleSubmit(e)}>
 					<div className="form-group row pt-3">
 						<label htmlFor="title" className="col-sm-2 col-form-label">
 							<h5 className="text-secondary ">Title: </h5>
@@ -55,7 +52,11 @@ class New extends Component {
 						</div>
 					</div>
 					<div className="form-group row pt float-right pr-3">
-						<button className="btn btn-md btn-primary" type="submit">
+						<button
+							className="btn btn-md btn-primary"
+							type="submit"
+							onClick={(e) => this.handleSubmit(e)}
+						>
 							Submit
 						</button>
 					</div>

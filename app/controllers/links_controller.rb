@@ -9,6 +9,7 @@ class LinksController < ApplicationController
   end
 
   def create
+    p link_params
     @link = Link.new(link_params)
     if @link.save
       render status: :ok, json: { notice: 'Link was successfully created' }
