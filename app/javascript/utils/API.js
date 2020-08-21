@@ -8,7 +8,6 @@ const headers = {
 
 export default {
   postNewLink: (payload) => {
-    console.log("postNewLink");
 		return fetch(Routes.links_path(), {
 			method: "POST",
 			headers: headers,

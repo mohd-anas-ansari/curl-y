@@ -6,6 +6,7 @@ import * as Routes from "../../utils/Routes";
 class New extends Component {
 	state = {
 		title: "",
+		message: null,
 	};
 
 	handleChange = (event) => {
@@ -17,11 +18,14 @@ class New extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const payload = { link: { title: this.state.title } };
-		console.log(payload, "Payload from handleSubmit");
-
+    
 		API.postNewLink(payload)
-			.then(() => {
-				window.location.href = Routes.links_path();
+    .then((response) => {
+      console.log(response, "response from handleSubmit");
+				this.setState({ message: response.notice });
+				setTimeout(function () {
+					window.location.href = Routes.links_path();
+				}, 1000);
 			})
 			.catch((error) => {
 				if (error.text) {
@@ -68,9 +72,13 @@ class New extends Component {
 	render() {
 		return (
 			<div className="container">
-				<div className="col-md-10 mx-auto pt-2">
-					{this.displayAddLinkForm()}
-				</div>
+				{this.state.message ? (
+					<div className="alert alert-success">{this.state.message}</div>
+				) : (
+					<div className="col-md-10 mx-auto pt-2">
+						{this.displayAddLinkForm()}
+					</div>
+				)}
 			</div>
 		);
 	}
