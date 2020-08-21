@@ -7,6 +7,7 @@ import Errors from "../shared/Errors";
 class New extends Component {
 	state = {
 		title: "",
+		source_url: "",
 		message: null,
 		errors: [],
 	};
@@ -27,13 +28,15 @@ class New extends Component {
 
 	handleChange = (event) => {
 		this.setState({
-			title: event.target.value,
+			[event.target.name]: event.target.value,
 		});
 	};
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		const payload = { link: { title: this.state.title } };
+		const payload = {
+			link: { title: this.state.title, source_url: this.state.source_url },
+		};
 
 		API.postNewLink(payload)
 			.then((response) => {
@@ -66,9 +69,25 @@ class New extends Component {
 								type="text"
 								className="form-control"
 								onChange={(e) => this.handleChange(e)}
+								name="title"
 							/>
 						</div>
 					</div>
+
+					<div className="form-group row pt-3">
+						<label htmlFor="source_url" className="col-sm-2 col-form-label">
+							<h5 className="text-secondary ">Source URL: </h5>
+						</label>
+						<div className="col-sm-10">
+							<input
+								type="text"
+								className="form-control"
+								onChange={(e) => this.handleChange(e)}
+								name="source_url"
+							/>
+						</div>
+					</div>
+
 					<div className="form-group row pt float-right pr-3">
 						<button
 							className="btn btn-md btn-primary"
