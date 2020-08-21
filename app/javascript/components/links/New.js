@@ -2,12 +2,28 @@ import React, { Component } from "react";
 
 import API from "../../utils/API";
 import * as Routes from "../../utils/Routes";
+import Errors from "../shared/Errors";
 
 class New extends Component {
 	state = {
 		title: "",
 		message: null,
+		errors: [],
 	};
+
+	displayErrors() {
+		const { errors } = this.state;
+
+		return (
+			<div className="row justify-content-center">
+				{errors.length !== 0 ? (
+					<div className="mt-4">
+						<Errors errors={errors} message="danger" />
+					</div>
+				) : null}
+			</div>
+		);
+	}
 
 	handleChange = (event) => {
 		this.setState({
@@ -18,21 +34,19 @@ class New extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		const payload = { link: { title: this.state.title } };
-    
+
 		API.postNewLink(payload)
-    .then((response) => {
-      console.log(response, "response from handleSubmit");
+			.then((response) => {
+				console.log(response, "response from handleSubmit");
 				this.setState({ message: response.notice });
 				setTimeout(function () {
 					window.location.href = Routes.links_path();
 				}, 1000);
 			})
 			.catch((error) => {
-				if (error.text) {
-					error.text().then((err) => {
-						console.error(err);
-					});
-				}
+				error.json().then(({ errors }) => {
+					this.setState({ ...this.state, errors });
+				});
 			});
 	};
 
@@ -72,6 +86,7 @@ class New extends Component {
 	render() {
 		return (
 			<div className="container">
+				{this.displayErrors()}
 				{this.state.message ? (
 					<div className="alert alert-success">{this.state.message}</div>
 				) : (
