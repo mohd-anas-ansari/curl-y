@@ -86,7 +86,9 @@ class New extends Component {
 							/>
 						</div>
 					</div>
-
+					<button onClick={this.props.handleClick} className="float-right m-0">
+						X
+					</button>
 					<div className="form-group">
 						<button
 							className="btn btn-md btn-primary"

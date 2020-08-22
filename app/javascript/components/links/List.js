@@ -8,7 +8,9 @@ import Link from "./Link";
 import New from "./New";
 
 class List extends React.Component {
-
+	state = {
+		showForm: false,
+	};
 
 	displayLinkList = (links) => {
 		return (
@@ -45,10 +47,14 @@ class List extends React.Component {
 
 	displayAddNewLinkButton = () => {
 		return (
-			<a className="btn btn-primary" href={Routes.new_link_path()}>
+			<button className="btn btn-primary" onClick={this.handleClick}>
 				Add New LInk
-			</a>
+			</button>
 		);
+	};
+
+	handleClick = (event) => {
+		this.setState({ showForm: !this.state.showForm });
 	};
 
 	render() {
@@ -61,7 +67,11 @@ class List extends React.Component {
 			<div className="bg-light">
 				<div className="hero">
 					<h1 className="text-center">Hero</h1>
-					<New />
+					{this.state.showForm ? (
+						<New handleClick={this.handleClick} />
+					) : (
+						this.displayAddNewLinkButton()
+					)}
 				</div>
 				<div className="container bg-info lists-container shadow-lg p-3 mb-5 bg-white rounded">
 					<p>All list</p>
