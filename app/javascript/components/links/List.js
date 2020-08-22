@@ -5,8 +5,11 @@ import API from "../../utils/API";
 import * as Routes from "../../utils/Routes";
 
 import Link from "./Link";
+import New from "./New";
 
 class List extends React.Component {
+
+
 	displayLinkList = (links) => {
 		return (
 			<div>
@@ -57,8 +60,8 @@ class List extends React.Component {
 		return (
 			<div className="bg-light">
 				<div className="hero">
-					<h1>Hero</h1>
-					<h1>Form</h1>
+					<h1 className="text-center">Hero</h1>
+					<New />
 				</div>
 				<div className="container bg-info lists-container shadow-lg p-3 mb-5 bg-white rounded">
 					<p>All list</p>
