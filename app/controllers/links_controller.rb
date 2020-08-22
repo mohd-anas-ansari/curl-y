@@ -13,6 +13,7 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    @link.assign_random_string_to_curl_id
     if @link.save
       render status: :ok, json: { notice: 'Link was successfully created', id: @link.id }
     else
