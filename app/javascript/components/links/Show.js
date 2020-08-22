@@ -14,6 +14,7 @@ class Show extends Component {
 						<div className="col-md-10">
 							{link.id} {link.title}
 							<p>{link.source_url}</p>
+							<p>Curl URL:  -> {link.curl_id}</p>
 						</div>
 					</div>
 				</div>
