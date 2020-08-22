@@ -5,20 +5,68 @@
   background: cyan;
 }
 
-.lists-container {
-  height: 700px;
-}
+// .lists-container {
+//   height: 700px;
+// }
 
+
+// Links
 
 .links-container {
   width: 100%;
+  justify-content: space-evenly;
 }
 
 .link-container {
+  position: relative;
   background-color: gray;
-  width: 300px;
+  width: 350px;
+  height: 100px;
+  border-radius: 4px;
+
+  :hover {
+    .pin-unpin {
+      display: none;
+    }
+  }
 }
 
+.link-title {
+  margin: 5px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.curl-url {
+  margin-left: 10px;
+  margin-top: 0;
+  color: black;
+  font-size: 15px;
+}
+
+.source-url {
+  margin-bottom: 0;
+  margin-left: 20px;
+  text-overflow: ellipsis;
+   margin-top: 20px;
+}
+
+.click-count {
+  margin: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.count-number {
+ 
+}
+
+.pin-unpin {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
 .pinned-list {
   background-color: red;
 }
