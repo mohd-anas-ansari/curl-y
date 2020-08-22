@@ -17,7 +17,7 @@ class List extends React.Component {
 			<div>
 				<div className="p-1">
 					{links && links.length ? (
-						<div className="links-container d-flex justify-content-around flex-wrap">
+						<div className="links-container d-flex flex-wrap ">
 							{links.map((link, index) => {
 								return (
 									<div key={index}>
@@ -66,7 +66,7 @@ class List extends React.Component {
 		return (
 			<div className="bg-light">
 				<div className="hero">
-					<h1 className="text-center">Hero</h1>
+					<h1 className="text-center">CURLY</h1>
 					{this.state.showForm ? (
 						<New handleClick={this.handleClick} />
 					) : (
