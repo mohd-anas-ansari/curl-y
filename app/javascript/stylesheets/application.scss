@@ -2,7 +2,7 @@
 
 
 .hero {
-  height: 50vh;
+  background: cyan;
 }
 
 .lists-container {
@@ -27,3 +27,18 @@
   background-color: orange;
 }
 
+
+
+// FORM
+
+
+.form-container {
+
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid gray;
+}
