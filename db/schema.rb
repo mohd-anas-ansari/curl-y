@@ -10,13 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_21_214401) do
+ActiveRecord::Schema.define(version: 2020_08_22_033257) do
 
   create_table "links", force: :cascade do |t|
     t.text "title", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "source_url", null: false
+    t.string "curl_id", null: false
+    t.integer "click_count", default: 0
+    t.boolean "is_pinned", default: false
   end
 
 end
