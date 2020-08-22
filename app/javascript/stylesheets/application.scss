@@ -1,1 +1,19 @@
-@import "bootstrap"
+@import "bootstrap";
+
+
+.hero {
+  height: 50vh;
+}
+
+.list-container {
+  height: 700px;
+}
+
+.pinned-list {
+  background-color: red;
+}
+
+.all-links-list {
+  background-color: orange;
+}
+
