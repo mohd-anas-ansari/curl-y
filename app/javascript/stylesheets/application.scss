@@ -1,1 +1,103 @@
-@import "bootstrap"
+@import "bootstrap";
+
+
+.hero {
+  // background: cyan;
+  height:300px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+// .lists-container {
+//   height: 700px;
+// }
+
+
+// Links
+
+
+.all-links-list {
+  margin-top: 20px;
+}
+.links-container {
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.link-container {
+  position: relative;
+  background-color: #FF9933;
+  width: 350px;
+  height: 100px;
+  border-radius: 4px;
+
+
+}
+
+.link-title {
+  margin: 5px;
+  margin-left: 10px;
+  margin-bottom: 0;
+}
+
+.curl-url {
+  margin-left: 10px;
+  margin-top: 0;
+  color: black;
+  font-size: 15px;
+}
+
+.source-url {
+  margin-bottom: 0;
+  margin-left: 20px;
+  text-overflow: ellipsis;
+   margin-top: 20px;
+}
+
+.click-count {
+  margin: 10px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.count-number {
+ 
+}
+
+.pin-unpin {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+}
+// .pinned-list {
+//   background-color: red;
+// }
+
+// .all-links-list {
+//   background-color: orange;
+// }
+
+
+.curls-heading {
+  margin-left: 20px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  border-bottom: 2px solid black;
+}
+
+
+// FORM
+
+
+.form-container {
+
+}
+
+.form-input {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid gray;
+}

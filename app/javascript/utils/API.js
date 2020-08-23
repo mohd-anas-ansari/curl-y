@@ -13,7 +13,19 @@ export default {
 			headers: headers,
 			body: JSON.stringify(payload),
 		}).then((response) => {
-			console.log(response, "RESPONSE");
+			if (!response.ok) {
+				throw response;
+			}
+			return response.json();
+		});
+	},
+
+	editLink: (id) => {
+		console.log(id, "ID");
+		return fetch(Routes.edit_link_path(id), {
+			method: "GET",
+			headers: headers,
+		}).then((response) => {
 			if (!response.ok) {
 				throw response;
 			}

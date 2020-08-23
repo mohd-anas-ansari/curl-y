@@ -30,7 +30,7 @@ class LinksController < ApplicationController
     @link.click_count += 1
 
     if @link.save
-      redirect_to links_path
+      redirect_to @link.source_url
     else
       errors = @link.errors.full_messages
       render status: :unprocessable_entity, json: { errors: errors  }

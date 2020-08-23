@@ -55,40 +55,41 @@ class New extends Component {
 
 	displayAddLinkForm() {
 		return (
-			<div>
-				<div className="row">
-					<h3 className="pb-3">Add Link</h3>
-				</div>
+			<div className="bg-warning form-container w-75 mx-auto">
 				<form onSubmit={(e) => this.handleSubmit(e)}>
-					<div className="form-group row pt-3">
-						<label htmlFor="title" className="col-sm-2 col-form-label">
+					<div className="form-group pt-3">
+						{/* <label htmlFor="title" className="col-sm-2 col-form-label">
 							<h5 className="text-secondary ">Title: </h5>
-						</label>
-						<div className="col-sm-10">
+						</label> */}
+						<div>
 							<input
 								type="text"
-								className="form-control"
+								className="form-control form-input"
 								onChange={(e) => this.handleChange(e)}
 								name="title"
+								placeholder="Title"
 							/>
 						</div>
 					</div>
 
-					<div className="form-group row pt-3">
-						<label htmlFor="source_url" className="col-sm-2 col-form-label">
+					<div className="form-group pt-3">
+						{/* <label htmlFor="source_url" className="col-sm-2 col-form-label">
 							<h5 className="text-secondary ">Source URL: </h5>
-						</label>
-						<div className="col-sm-10">
+						</label> */}
+						<div>
 							<input
 								type="text"
-								className="form-control"
+								className="form-control form-input"
 								onChange={(e) => this.handleChange(e)}
 								name="source_url"
+								placeholder="Source URL"
 							/>
 						</div>
 					</div>
-
-					<div className="form-group row pt float-right pr-3">
+					<button onClick={this.props.handleClick} className="float-right m-0">
+						X
+					</button>
+					<div className="form-group">
 						<button
 							className="btn btn-md btn-primary"
 							type="submit"
@@ -109,9 +110,7 @@ class New extends Component {
 				{this.state.message ? (
 					<div className="alert alert-success">{this.state.message}</div>
 				) : (
-					<div className="col-md-10 mx-auto pt-2">
-						{this.displayAddLinkForm()}
-					</div>
+					<div className="pt-2">{this.displayAddLinkForm()}</div>
 				)}
 			</div>
 		);
