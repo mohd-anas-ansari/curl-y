@@ -55,7 +55,7 @@ class New extends Component {
 
 	displayAddLinkForm() {
 		return (
-			<div className="bg-warning form-container w-75 mx-auto">
+			<div className="form-container w-50 mx-auto">
 				<form onSubmit={(e) => this.handleSubmit(e)}>
 					<div className="form-group pt-3">
 						{/* <label htmlFor="title" className="col-sm-2 col-form-label">
@@ -67,7 +67,7 @@ class New extends Component {
 								className="form-control form-input"
 								onChange={(e) => this.handleChange(e)}
 								name="title"
-								placeholder="Title"
+								placeholder="Youtube"
 							/>
 						</div>
 					</div>
@@ -82,12 +82,12 @@ class New extends Component {
 								className="form-control form-input"
 								onChange={(e) => this.handleChange(e)}
 								name="source_url"
-								placeholder="Source URL"
+								placeholder="https://www.youtube.com"
 							/>
 						</div>
 					</div>
-					<button onClick={this.props.handleClick} className="float-right m-0">
-						X
+					<button onClick={this.props.handleClick} className="float-right m-0 btn btn-dark">
+						&#x2715;
 					</button>
 					<div className="form-group">
 						<button
