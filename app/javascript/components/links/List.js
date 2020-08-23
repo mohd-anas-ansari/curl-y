@@ -38,7 +38,7 @@ class List extends React.Component {
 		API.editLink(id)
 			.then((response) => {
 				console.log(response);
-				window.location.href = Routes.links_path();
+				window.location.href = Routes.root_path();
 			})
 			.catch((error) => {
 				console.log(error, "ERROR IN HANDLE PINNING");
