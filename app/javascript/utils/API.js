@@ -32,4 +32,17 @@ export default {
 			return response.json();
 		});
 	},
+
+	updateLinkCountAndRedirect: (id) => {
+		console.log(id, "ID");
+		return fetch(Routes.curl_path(id), {
+			method: "GET",
+			headers: headers,
+		}).then((response) => {
+			if (!response.ok) {
+				throw response;
+			}
+			return response.json();
+		});
+	},
 };
