@@ -20,7 +20,7 @@ class Link extends React.Component {
 		let ROOT_URL = "http://curl-y.herokuapp.com";
 		return (
 			<React.Fragment>
-				<div className="link-container my-3">
+				<div className="link-container my-3 shadow-lg rounded">
 					<span
 						className="pin-unpin"
 						onClick={() => this.props.handlePinning(link.id)}
