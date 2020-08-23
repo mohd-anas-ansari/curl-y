@@ -42,11 +42,18 @@
 }
 
 .curl-url {
-  margin-left: 10px;
+  margin-left: 5px;
   margin-top: 0;
   color: black;
+  background-color: transparent;
+  border: none;
   font-size: 15px;
 }
+
+.curl-url:hover {
+    color: white;
+    border-bottom: 2px solid black;
+  }
 
 .source-url {
   margin-bottom: 0;
