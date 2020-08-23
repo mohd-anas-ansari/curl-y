@@ -27,7 +27,7 @@ class List extends React.Component {
 							})}
 						</div>
 					) : (
-						<h3>No links yet</h3>
+						<h3 className="ml-3">Nothing here, yet.</h3>
 					)}
 				</div>
 			</div>
