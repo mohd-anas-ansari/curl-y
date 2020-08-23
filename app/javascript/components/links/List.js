@@ -27,7 +27,7 @@ class List extends React.Component {
 							})}
 						</div>
 					) : (
-						<h3>No link has been created yet</h3>
+						<h3>No links yet</h3>
 					)}
 				</div>
 			</div>
@@ -47,9 +47,11 @@ class List extends React.Component {
 
 	displayAddNewLinkButton = () => {
 		return (
-			<button className="btn btn-primary" onClick={this.handleClick}>
-				Add New LInk
-			</button>
+			<div>
+				<button className="btn btn-primary" onClick={this.handleClick}>
+					CURL a new link
+				</button>
+			</div>
 		);
 	};
 
@@ -65,14 +67,18 @@ class List extends React.Component {
 		console.log(pinnedLinks, "pinnedLinks");
 		return (
 			<div className="bg-light">
-				<div className="hero">
-					<h1 className="text-center">CURLY</h1>
-					{this.state.showForm ? (
-						<New handleClick={this.handleClick} />
-					) : (
-						this.displayAddNewLinkButton()
-					)}
-				</div>
+				<header>
+					<div className="hero mx-auto text-center">
+						<h1 className="text-center font-weight-bold">CURLY</h1>
+						<p>Get a unique CURL-ed URL to share with your friends.</p>
+						{this.state.showForm ? (
+							<New handleClick={this.handleClick} />
+						) : (
+							this.displayAddNewLinkButton()
+						)}
+					</div>
+				</header>
+
 				<div className="container bg-info lists-container shadow-lg p-3 mb-5 bg-white rounded">
 					<p>All list</p>
 					{/* <div className="row">
@@ -80,17 +86,14 @@ class List extends React.Component {
 					<div className="col-md-2">{this.displayAddNewLinkButton()}</div>
 				</div> */}
 					<div className="pinned-list">
-						<h6>Pinned links</h6>
+						<small className="curls-heading">PINNED cURLS</small>
 						{this.displayLinkList(pinnedLinks)}
 					</div>
 
 					<div className="all-links-list">
-						<h6>All links</h6>
+						<small className="curls-heading">ALL cURLS</small>
 						{this.displayLinkList(links)}
 					</div>
-				</div>
-				<div className="footer">
-					<h1>Footer</h1>
 				</div>
 			</div>
 		);
