@@ -79,10 +79,18 @@ class Link extends React.Component {
 					<button
 						className="curl-url"
 						onClick={() => this.handleClick(link.curl_id)}
+						data-toggle="tooltip"
+						data-placement="bottom"
+						title="Curled URL"
 					>{`${ROOT_URL}/${link.curl_id}`}</button>
 					{/* </a> */}
 
-					<div className="click-count">
+					<div
+						className="click-count"
+						data-toggle="tooltip"
+						data-placement="bottom"
+						title="Total Clicks"
+					>
 						<svg
 							width="1em"
 							height="1em"
@@ -98,7 +106,12 @@ class Link extends React.Component {
 						</svg>
 						<span className="count-number pl-1">{link.click_count}</span>
 					</div>
-					<p className="source-url">
+					<p
+						className="source-url"
+						data-toggle="tooltip"
+						data-placement="bottom"
+						title={link.source_url}
+					>
 						<small>Source: </small>
 						<a href={link.source_url}>{this.truncateUrl(link.source_url)}</a>
 					</p>
