@@ -80,16 +80,10 @@ class List extends React.Component {
 				</header>
 
 				<div className="container bg-info lists-container shadow-lg p-3 mb-5 bg-white rounded">
-					<p>All list</p>
-					{/* <div className="row">
-					<div className="col-md-10">{this.displayLinkList(links)}</div>
-					<div className="col-md-2">{this.displayAddNewLinkButton()}</div>
-				</div> */}
-					<div className="pinned-list">
+					<div className="pinned-list mt-3">
 						<small className="curls-heading">PINNED cURLS</small>
 						{this.displayLinkList(pinnedLinks)}
 					</div>
-
 					<div className="all-links-list">
 						<small className="curls-heading">ALL cURLS</small>
 						{this.displayLinkList(links)}
