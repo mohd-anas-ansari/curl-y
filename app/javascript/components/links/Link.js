@@ -14,6 +14,21 @@ class Link extends React.Component {
 
 		return string;
 	};
+
+	handleClick = (id) => {
+		console.log(id, "ID");
+		API.updateLinkCountAndRedirect(id)
+			.then((response) => {
+				window.location.href = this.props.link.source_url;
+			})
+			.catch((error) => {
+				console.log(error, "ERROR");
+				error.json().then(({ errors }) => {
+					this.setState({ ...this.state, errors });
+				});
+			});
+	};
+
 	render() {
 		let link = this.props.link;
 		console.log(this.props, "Props");
@@ -60,9 +75,12 @@ class Link extends React.Component {
 						)}
 					</span>
 					<h5 className="link-title">{link.title}</h5>
-					<a href={Routes.curl_path(link.curl_id)}>
-						<small className="curl-url">{`${ROOT_URL}/${link.curl_id}`}</small>
-					</a>
+					{/* <a href={Routes.curl_path(link.curl_id)}> */}
+					<button
+						className="curl-url"
+						onClick={() => this.handleClick(link.curl_id)}
+					>{`${ROOT_URL}/${link.curl_id}`}</button>
+					{/* </a> */}
 
 					<div className="click-count">
 						<svg
