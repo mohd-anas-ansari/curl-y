@@ -42,7 +42,7 @@ class New extends Component {
 			.then((response) => {
 				this.setState({ message: response.notice });
 				setTimeout(function () {
-					window.location.href = Routes.link_path(response.id);
+					window.location.href = Routes.links_path();
 				}, 1000);
 			})
 			.catch((error) => {
