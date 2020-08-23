@@ -100,7 +100,7 @@ class Link extends React.Component {
 					</div>
 					<p className="source-url">
 						<small>Source: </small>
-						{this.truncateUrl(link.source_url)}
+						<a href={link.source_url}>{this.truncateUrl(link.source_url)}</a>
 					</p>
 					{/* <p>{String(link.is_pinned)}</p> */}
 
