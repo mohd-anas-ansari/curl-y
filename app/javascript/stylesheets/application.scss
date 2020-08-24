@@ -13,6 +13,12 @@
 //   height: 700px;
 // }
 
+.hero-heading {
+  font-size: 5vw;
+  font-weight: 900;
+  font-family: 'Heebo', sans-serif;
+}
+
 
 // Links
 
@@ -35,10 +41,20 @@
 
 }
 
+.report-button {
+  display: none;
+}
+
 .link-title {
   margin: 5px;
   margin-left: 10px;
   margin-bottom: 0;
+}
+
+.link-title:hover  > .report-button {
+  display: inline;
+  cursor: pointer;
+  transform: scale(2);
 }
 
 .curl-url {
@@ -69,8 +85,13 @@
   right: 20px;
 }
 
-.count-number {
- 
+.count-section {
+  margin:auto;
+}
+
+.click-count-label {
+  border-bottom: 2px solid black;
+  font-weight: 900;
 }
 
 .pin-unpin {
@@ -81,7 +102,7 @@
 }
 
 .pin-unpin:hover {
-  transform: scale(1.3)
+  transform: scale(1.3);
 }
 // .pinned-list {
 //   background-color: red;
@@ -113,4 +134,29 @@
   border: none;
   border-radius: 0;
   border-bottom: 1px solid black;
+}
+
+
+
+// REPORT
+
+
+.report-heading {
+  border-bottom: 2px solid black;
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.number {
+  font-weight: 900;
+  font-size: 150px;
+  line-height: 0.8;
+}
+// .date-heading-container {
+//   margin-top: 50px;
+// }
+.date-heading {
+  font-weight: 900;
 }
