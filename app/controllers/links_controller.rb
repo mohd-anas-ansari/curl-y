@@ -37,6 +37,20 @@ class LinksController < ApplicationController
     end
   end
 
+
+  def fetch_source_url
+    @link = Link.find_by(curl_id: params[:curl_id])
+    @link.click_count += 1
+
+    if @link.save
+      redirect_to @link.source_url
+    else
+      errors = @link.errors.full_messages
+      render status: :unprocessable_entity, json: { errors: errors  }
+    end
+
+  end
+
   def edit
     @link.is_pinned = !@link.is_pinned
 
