@@ -49,7 +49,7 @@ class Show extends Component {
 								<div className="text-center">
 									<small className="click-count-label">TOTAL CLICKS</small>
 								</div>
-								<div className="number p-0 m-0 ">25</div>
+								<div className="number p-0 m-0">{link.click_count}</div>
 							</div>
 						</div>
 					</div>
