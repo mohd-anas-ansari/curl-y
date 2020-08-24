@@ -3,7 +3,7 @@ class LinksController < ApplicationController
   # before_action :find_link_by_curl_id, only: [:update]
 
   def index
-    @links = Link.all
+    @links = Link.all.order("created_at DESC")
   end
 
   def new
