@@ -19,7 +19,9 @@ class Link extends React.Component {
 		console.log(id, "ID");
 		API.updateLinkCountAndRedirect(id)
 			.then((response) => {
-				window.location.href = this.props.link.source_url;
+				window.open(this.props.link.source_url);
+        window.location.href = "/";
+				// window.location.href = this.props.link.source_url;
 			})
 			.catch((error) => {
 				console.log(error, "ERROR");
