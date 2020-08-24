@@ -69,7 +69,7 @@ class List extends React.Component {
 			<div className="bg-light">
 				<header>
 					<div className="hero mx-auto text-center">
-						<h1 className="text-center font-weight-bold">CURLY</h1>
+						<h1 className="text-center font-weight-bold hero-heading">CURLY</h1>
 						<p>Get a unique CURL-ed URL to share with your friends.</p>
 						{this.state.showForm ? (
 							<New handleClick={this.handleClick} />
