@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   root "links#index"
   resources :links, only: [:index, :new, :create, :show, :edit]
-  get "/:curl_id" => "links#update"
+  get "/curls/:curl_id" => "links#update"
 
+  get "/:curl_id" => "links#fetch_source_url"
 end
