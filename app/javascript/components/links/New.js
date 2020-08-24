@@ -42,7 +42,7 @@ class New extends Component {
 			.then((response) => {
 				this.setState({ message: response.notice });
 				setTimeout(function () {
-					window.location.href = Routes.links_path();
+					window.location.href = Routes.root_path();
 				}, 1000);
 			})
 			.catch((error) => {
@@ -86,7 +86,10 @@ class New extends Component {
 							/>
 						</div>
 					</div>
-					<button onClick={this.props.handleClick} className="float-right m-0 btn btn-dark">
+					<button
+						onClick={this.props.handleClick}
+						className="float-right m-0 btn btn-dark"
+					>
 						&#x2715;
 					</button>
 					<div className="form-group">
