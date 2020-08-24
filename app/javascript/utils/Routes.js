@@ -11,7 +11,7 @@ export function link_path(id) {
 }
 
 export function curl_path(curl_id) {
-	return `/${curl_id}`;
+	return `/curls/${curl_id}`;
 }
 
 export function edit_link_path(id) {
