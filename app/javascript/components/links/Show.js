@@ -3,15 +3,14 @@ import React, { Component } from "react";
 import * as Routes from "../../utils/Routes";
 
 class Show extends Component {
-
 	formatDate = (dateString) => {
-  const options = { year: "numeric", month: "long", day: "numeric" }
-  return new Date(dateString).toLocaleDateString(undefined, options)
-	}
-	
+		const options = { year: "numeric", month: "long", day: "numeric" };
+		return new Date(dateString).toLocaleDateString(undefined, options);
+	};
 
 	render() {
 		const link = this.props.link;
+		const ROOT_URL = "http://curl-y.herokuapp.com";
 		console.log(link, "LINK");
 		return (
 			<React.Fragment>
@@ -28,7 +27,7 @@ class Show extends Component {
 								<span className="mr-4">
 									<strong>CURL LINK:</strong>
 								</span>
-								{link.source_url}
+								{`${ROOT_URL}/${link.curl_id}`}
 							</p>
 							<p className="ml-3 mb-5">
 								<span className="mr-4">
